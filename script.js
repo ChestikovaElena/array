@@ -7,8 +7,8 @@
 //reduce
 
 // const array = [15, 4, 17, 10, 8, 9, 21];
-const array = [16, 4, 18, 10, 8, 6, 22];
-// const array = ['ghfhfh', '4', '   '];
+// const array = [16, 4, 18, 10, 8, 6, 22];
+const array = ['ghfhfh', 4, '   '];
 
 //////////////////////////////forEach
 
@@ -17,7 +17,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // });
 
 // function forEachFunc(array, fn) {
-//   for (item of array) {
+//   for (let item of array) {
 //     fn(item);
 //   }
 // };
@@ -38,7 +38,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 
 // function mapFunc(array, fn) {
 //   const result = [];
-//   for (item of array) {
+//   for (let item of array) {
 //     const editiedValue = fn(item);
 
 //     result.push(editiedValue);
@@ -64,7 +64,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 
 // function filterFunc(array, fn) {
 //   const result = [];
-//   for (item of array) {
+//   for (let item of array) {
 //     const isFilteringValue = fn(item);
 
 //     if (isFilteringValue) {
@@ -76,10 +76,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // }
 
 // const result = filterFunc(array, (item) => {
-//   if (item % 2 === 0) {
-//     return true;
-//   }
-//   return false;
+//   return item % 2 === 0
 // })
 
 // console.log(result);
@@ -88,7 +85,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 ////////////////////////////find
 
 // function isPrime(item, index, array) {
-//   var start = 2;
+//   let start = 2;
 //   while (start <= Math.sqrt(item)) {
 //     if (item % start++ < 1) {
       
@@ -101,7 +98,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // console.log(array.find(isPrime));
 
 // function findFunc(array, fn) {
-//   for (item of array) {
+//   for (let item of array) {
 //     if (fn(item)) {
 //       return item;
 //     }
@@ -109,10 +106,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // }
 
 // const result = findFunc(array, (item) => {
-//   if (isPrime(item)) {
-//     return item;
-//   }
-//   return false;
+//   return (isPrime(item)) ? item : false;
 // })
 
 // console.log(result);
@@ -130,7 +124,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // function isEvenFunc(array, fn) {
 //   let isEven = false;
 
-//   for (item of array) {
+//   for (let item of array) {
 //     if (fn(item)) {
 //       isEven = true;
 //     } else {
@@ -159,7 +153,7 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 // function isInteger(array, fn) {
 //     let isInteger = false;
   
-//     for (item of array) {
+//     for (let item of array) {
 //       if (fn(item)) {
 //         return isInteger = true;
 //       } else {
@@ -168,6 +162,16 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 //     }
   
 //     return isInteger;
+//   }
+
+// function isInteger(array, fn) {
+//   for (let item of array) {
+//     console.log(item);
+//     if (fn(item)) { 
+//       return true;
+//     }
+//   }
+//   return false;
 //   }
   
 //   const result = isInteger(array, (item) => {
@@ -179,23 +183,23 @@ const array = [16, 4, 18, 10, 8, 6, 22];
 
 /////////////////////////////reduce
 
-const sum = array.reduce((acc, item) => {
-  return acc + item;
-}, 0);
+// const sum = array.reduce((acc, item) => {
+//   return acc + item;
+// }, 0);
 
-console.log(sum);
+// console.log(sum);
 
-function reduceFunc(array, fn, startValue) {
-  let result = startValue;
-  for (item of array) {
-    result = fn(result, item);
-  }
+// function reduceFunc(array, fn, startValue) {
+//   let result = startValue;
+//   for (let item of array) {
+//     result = fn(result, item);
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-const result = reduceFunc(array, (acc,item) => {
-  return acc + item;
-}, 0);
+// const result = reduceFunc(array, (acc,item) => {
+//   return acc + item;
+// }, 0);
 
-console.log(result);
+// console.log(result);
